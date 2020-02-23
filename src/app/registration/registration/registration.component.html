@@ -1,0 +1,53 @@
+  <form (submit)="addFct()">
+    <label>
+      <p class="label-txt">ENTER YOUR EMAIL</p>
+      <input type="text" class="input" [(ngModel)]='user.emailId' name ="email" id="email"
+      #myemail="ngModel" required minlength="3" maxlength="35">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR FIRST NAME</p>
+      <input type="text" class="input" [(ngModel)]='user.firstName' name ="firstname" id="firstname"
+      #fname="ngModel" required minlength="3" maxlength="20">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+        <p class="label-txt">ENTER YOUR LAST NAME</p>
+        <input type="text" class="input" [(ngModel)]='user.lastName' name ="lastname" id="lastname"
+        #lname="ngModel" required minlength="3" maxlength="20">
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+      <label>
+        <p class="label-txt">ENTER YOUR PASSWORD</p>
+        <input type="password" class="input" [(ngModel)]='user.passWord' name ="password" id="password"
+        #pword="ngModel" required minlength="3" >
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+    <button type="submit">submit</button> 
+
+    
+    <div *ngIf="myemail.errors?.required && myemail.touched" class="alert alert-danger"> Email is required ! </div>
+    <div *ngIf="myemail.errors?.minlength && myemail.touched" class="alert alert-danger"> Min required is 3 characters ! </div>
+    <div *ngIf="myemail.errors?.maxlength && myemail.touched" class="alert alert-danger"> Max required is 35 characters ! </div>
+
+    <div *ngIf="fname.errors?.required && fname.touched" class="alert alert-danger"> First name is required ! </div>
+    <div *ngIf="fname.errors?.minlength && fname.touched" class="alert alert-danger"> Min required is 3 characters ! </div>
+    <div *ngIf="fname.errors?.maxlength && fname.touched" class="alert alert-danger"> Max required is 20 characters ! </div>
+
+    <div *ngIf="lname.errors?.required && lname.touched" class="alert alert-danger"> Last name is required ! </div>
+    <div *ngIf="lname.errors?.minlength && lname.touched" class="alert alert-danger"> Min required is 3 characters ! </div>
+    <div *ngIf="lname.errors?.maxlength && lname.touched" class="alert alert-danger"> Max required is 20 characters ! </div>
+
+    <div *ngIf="pword.errors?.required && pword.touched" class="alert alert-danger"> Password is required ! </div>
+    <div *ngIf="pword.errors?.minlength && pword.touched" class="alert alert-danger"> Min required is 3 characters ! </div>
+  </form>
+
+

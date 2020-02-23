@@ -1,0 +1,18 @@
+<form (submit)="loginF()">
+    <label>
+      <p class="label-txt">ENTER YOUR EMAIL</p>
+      <input type="text" class="input"  name ="email" id="email" [(ngModel)]='login.email' >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR PASSWORD</p>
+      <input type="text" class="input"  name ="firstname" id="firstname" [(ngModel)]='login.password' >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <button type="submit">submit</button> 
+
+    </form>
